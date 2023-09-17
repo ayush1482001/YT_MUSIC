@@ -1,0 +1,20 @@
+.subnav{
+    /* background-color: rgba(197, 120, 20, 0.142); */
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.subnav button{
+border: none!important;
+border-radius: 1vh;
+color: white!important;
+margin-right:1vw !important;
+background-color: rgba(64, 64, 64, 0.516)!important;
+font-weight: 550;
+}
+
+.subnav button:hover{
+background-color: rgba(102, 102, 102, 0.56)!important;
+}

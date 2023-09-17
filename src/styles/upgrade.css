@@ -1,0 +1,142 @@
+.yt_premium{
+    background-color: #262626;
+    margin: 0!important;
+    width: 100%!important;
+    padding: 8vh 0!important;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.yt_premium button{
+    padding: 1% 6%;
+    border-radius:  200px;
+}
+.yt_premium h1{
+    margin: 5vh 0;
+    font-weight: 300;
+    font-size: 150%!important;
+}
+.yt_premium p span{
+    color :rgb(0, 136, 255);
+    /* font-size: 150%; */
+   cursor: pointer!important;
+}
+.first_poster .card3{
+    margin-top: 5vh;
+    width: 25%;
+    min-height: 30vh;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.first_poster{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  
+}
+.first_poster img{
+  height: 10vh;
+}
+.first_poster h2,.first_poster h5{
+    font-weight: 100!important;
+    margin: .5vh 0;
+}
+.second_poster{
+    background-image: url('../assets/img1.jpg');
+    height: 70vh;
+    background-size: cover; 
+    overflow: hidden;
+    position: relative; 
+}
+ h1{
+    font-family:Tahoma, sans-serif;
+    font-size: 300%;
+    font-weight: 100!important;
+    margin-bottom: vh;
+    height: max-content!important;
+}
+ h4{
+    font-family: sans-serif;
+    color: rgb(146, 145, 145)!important;
+    /* text-align: center!important; */
+}
+.second_poster div{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: start;
+    padding: 5vh;
+    /* background-color: yellow; */
+    width: max-content;
+    position: absolute;
+    top: 35%;
+    left: 8%;
+}
+.third_poster{
+    overflow: hidden;
+    margin-top: 3vh;
+    background-image: url('../assets/img2.jpg');
+    height: 60vh;
+    background-size: cover; 
+    
+    position: relative; 
+}
+.third_poster div{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: start;
+    padding: 5vh;
+    /* background-color: yellow; */
+    width: max-content;
+    position: absolute;
+    top: 30%;
+    right: 20%;
+}
+.forth_poster div{
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: start;
+    padding: 5vh;
+    width: max-content;
+    position: absolute;
+    top: 30%;
+    left: 12%;
+    
+}
+.forth_poster{
+    margin-top: 3vh;
+    background-image: url('../assets/img3.jpg');
+    height: 70vh;
+    background-size: cover; 
+    position: relative; 
+    overflow: hidden;
+}
+
+
+.final_poster{
+    height: 30vh;
+}
+.final_poster {
+    overflow: hidden;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.final_poster span{
+    color: rgb(0, 157, 255);
+    text-transform: lowercase;
+    cursor: pointer;
+    font-family: 100!important;
+}
+.link-a:hover{
+    color: rgba(0, 136, 255, 0.623);
+}

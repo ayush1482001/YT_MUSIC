@@ -1,0 +1,46 @@
+.albumcard{
+    width: 220px;
+    height: 320px;
+    color: white!important;
+    background-color: black!important;
+}
+.albumcard:hover{
+   
+    scale:1.05;
+    transition: ease-in-out;
+    transition-duration: 0.3s;
+    /* transition-delay: .1s; */
+    .playsm{
+        display: inline-block!important;
+    }
+}
+.albumcard .imgposter{
+    height: 200px!important;
+    border-radius: 5px;
+    
+}
+.imgposter{
+    position: relative!important;
+   box-shadow: 1.5px 2px 3px rgb(0, 123, 255) !important;
+}
+.playsm{
+    height: 3rem;
+    width: 3rem;
+    position: absolute;
+   top: 0;
+    right: 0;
+    display: none !important;
+}
+
+.albumcard p{
+    margin: 5px 0;
+    color: grey;
+    font-weight: 600;
+    font-family: sans-serif;
+    font-size: 16px;
+    /* background-color: yellow !important; */
+    height: 37px;
+    text-overflow: ellipsis!important;
+    overflow-y: hidden!important;
+    /* white-space: nowrap; */
+}

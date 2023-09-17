@@ -1,0 +1,36 @@
+.subnavigation{
+    margin-bottom: 10vh;
+    background-color: yellow transparent!important;
+}
+.explore_category{
+    margin-top: 5vh!important;
+    /* background-color: rgba(255, 255, 2, 0.305); */
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+}
+.explore_category button{
+    width: 97%;
+    height: 100%;
+    background-color:rgba(255,255,255,0.15);
+    font-weight: 700;
+    margin: 0;
+}
+.mood_category{
+   
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+
+}
+.mood_category button{
+   
+   color: white!important;
+   border: 1px solid rgb(41, 40, 40) !important;
+
+}
+.moodopt{
+    /* background-color: yellow!important; */
+    display: flex !important;
+}
