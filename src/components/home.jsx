@@ -94,7 +94,7 @@ const [fulldata,setfulldata]=useState([]);
           </>
         })
       }
-        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width: "100%", margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} /> : null}
+        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center',color:'green',width: "100%", margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} /> : null}
       </Grid>
 
 

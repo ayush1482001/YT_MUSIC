@@ -80,3 +80,7 @@
   display: flex;
   justify-content: center;
 }
+
+.pagination {
+  color: blue!important;
+}
