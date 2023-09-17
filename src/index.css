@@ -8,3 +8,9 @@ body{
 h1{
   color: white!important;
 }
+.DrawerHead{
+  background-color: black!important;
+}
+.pagination{
+  color: white !important;;
+}

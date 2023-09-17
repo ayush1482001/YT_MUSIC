@@ -113,7 +113,7 @@ const Explore = () => {
               </Grid>
             </>
           })}
-          {exploreData.data && <Pagination sx={{ display: 'flex', justifyContent: 'center', width: "100%", color: 'white', margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} />}
+          {exploreData.data && <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width: "100%", color: 'white', margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} />}
         </Grid>
       </div>
     </div>
