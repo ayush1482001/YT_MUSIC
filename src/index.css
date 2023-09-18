@@ -17,3 +17,8 @@ h1{
 .css-1omp2b7 {
   color:rgb(255, 255, 255)!important;
 }
+@media (max-width: 582px){
+  .css-8u39c-MuiTypography-root img{
+    display: none !important;
+  }
+}
