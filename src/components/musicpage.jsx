@@ -326,7 +326,7 @@ export default function App() {
     <Grid container spacing={2} className='albumpage'>
 
       <Grid className='imagebox' item md={7} sm={7} sx={{ background: 'black', height: '80vh' }} xs={12}>
-        <img src={songData.thumbnail} />
+        <img src={songData?.thumbnail} />
       </Grid>
       <Grid item className='detailbox' md={5} sm={5} sx={{ background: 'black', color: 'white', height: '80vh' }} xs={12}>
         <h2>Album songs</h2>
