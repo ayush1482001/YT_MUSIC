@@ -80,7 +80,7 @@ const [fulldata,setfulldata]=useState([]);
        { prop.searchValue ? alldata.map((e,ind)=>{
         return <>
         <Grid key={ind}  item lg={2.4} >
-          <ActionAreaCard details={e}  />
+          <ActionAreaCard key={ind} details={e}  />
         </Grid>
       </>
 

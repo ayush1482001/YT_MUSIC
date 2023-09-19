@@ -106,9 +106,9 @@ const Explore = () => {
       <div className="explore_mainContainer">
         <Grid container sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: '60vh' }} spacing={2}>
           {!exploreData.data ? <Spinner2 /> : null}
-          {exploreData.data && (exploreData.data).map((e) => {
+          {exploreData.data && (exploreData.data).map((e,ind) => {
             return <>
-              <Grid item lg={2.4} >
+              <Grid key={ind} item lg={2.4} >
                 <Songcard details={e} />
               </Grid>
             </>

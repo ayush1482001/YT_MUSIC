@@ -9,10 +9,6 @@ import Playlist from './likedMusicPlay'
 const TryLikedPlayList=()=>{
 const navigate=useNavigate();
 
-    // const [data,setData]=useState([]);
-    // useEffect(()=>{
-    //    setData(JSON.parse(localStorage.getItem("likedSongArrayUp")));
-    // },[]);/
     const arr3=JSON.parse(localStorage.getItem("loginStatus"));
     const jwtToken = arr3?.token; // Replace with your actual JWT token
     const url = 'https://academics.newtonschool.co/api/v1/music/favorites/like';
@@ -38,10 +34,6 @@ const navigate=useNavigate();
             console.log(d.data.songs);
         });
       }, []);
-      // const st=localStorage.getItem('loginStatus');
-      // if (!st || st.status !=='success') {
-      //     alert("you are not logged in, playlist is not available")
-      // }
 
     return<>
     <div className="playlist">

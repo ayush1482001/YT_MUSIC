@@ -12,8 +12,8 @@ import store from '../store/store';
 const MusicList=()=>{
  
   const navigate=useNavigate();
-  const allData= useSelector((store)=>store);
-  console.log(allData);
+  // const allData= useSelector((store)=>store);
+  // console.log(allData);
   const [libraryStatus,setLibraryStatus]=useState();
   // const id=allData.albumID.albumId;
   const id=localStorage.getItem("albumID");
@@ -46,10 +46,7 @@ const MusicList=()=>{
     });
   }, [])
   
- useEffect(()=>{
 
-  
- },[]);
   
 
 
@@ -72,12 +69,9 @@ const MusicList=()=>{
       arr.push(musiclist);
       localStorage.setItem("libraryAlbum",JSON.stringify(arr));
       setLibraryStatus(true);
-      // alert("library status is", libraryStatus.current ? "true":"false");
-      // alert("successfully added in library", libraryStatus.current);
     }
   }
-  // console.log("ID is ", id); 
-  // console.log("musiclist is ", musiclist); 
+
 
   
 
@@ -113,7 +107,7 @@ const MusicList=()=>{
         <ol>
           {musiclist.songs && musiclist.songs.map((e,ind)=>{
             return<>
-            <li onClick={
+            <li key={ind} onClick={
               ()=>{
                 navigate('/musiclist/songplay')
                 localStorage.setItem('songIndex',ind);
