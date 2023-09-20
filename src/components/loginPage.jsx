@@ -27,8 +27,8 @@ const Login = () => {
     'Content-Type': 'application/json'
   };
   const body=JSON.stringify({
-    "email": "ayu@123mn.com",
-    "password": "7599",
+    "email": loginDetails.email,
+    "password": loginDetails.password,
     "appType": "music"
 })
 
@@ -59,13 +59,15 @@ const handleSubmit=(e)=>{
       const data = await response.json();
       return data;
     } else {
-      throw new Error(response.statusText);
+      throw new Error("couldn't find the acoount ,Please do signup first.");
     }
   };
   fetchData().then((d) => {
       setResponse(d);
       setOpen(true);
       localStorage.setItem("loginStatus",JSON.stringify(d));
+    }).catch((err) => {
+      alert(err.message);
     });
     console.log("response is",response)
   }

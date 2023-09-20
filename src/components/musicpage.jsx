@@ -71,7 +71,7 @@ export default function App() {
     let index = post.findIndex(e => e.title === songname);
     setCurrentpage(index);
     setsongData(post[index])
-    setsongUrl(post[index].audio_url)
+    setsongUrl(post[index]?.audio_url)
 
   }
   const arr2 = JSON.parse(localStorage.getItem("likedSongArrayUp"));
@@ -215,9 +215,7 @@ export default function App() {
 
   useEffect(() => {
 
-    audioRef.current.src = post && post[currentPage].audio_url;
-    console.log('songData.audio_url is', songData.audio_url)
-
+    audioRef.current.src = post && post[currentPage]?.audio_url;
     if (isPlaying) {
       audioRef.current.play();
     }
@@ -247,9 +245,9 @@ export default function App() {
 
   const handleNext = () => {
     if (currentPage < post.length - 1) {
-      setCurrentpage(currentPage + 1);
       setsongData(post[currentPage + 1])
-      setsongUrl(songData.audio_url)
+      setCurrentpage(currentPage + 1);
+      setsongUrl(songData?.audio_url)
       // setIsPlaying(false);
     }
   };
@@ -260,8 +258,8 @@ export default function App() {
 
   const handleTrackEnded = () => {
     if (currentPage < post.length - 1) {
-      setCurrentpage(currentPage + 1);
       setsongData(post[currentPage + 1]);
+      setCurrentpage(currentPage + 1);
     } else {
       setIsPlaying(false);
       setCurrentTime(0);

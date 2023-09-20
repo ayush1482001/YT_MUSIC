@@ -45,6 +45,7 @@ import Upgradee from '../components/upgrade';
 import Explore from '../components/explore';
 import LikedPlaylist from '../components/likedPlaylist';
 import { useNavigate } from 'react-router-dom';
+import Avtr from '../components/Avtr';
 import {
     createBrowserRouter,
     RouterProvider,
@@ -273,7 +274,7 @@ export default function TryLiked() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#" />
+                           {userrData ? <Avtr userrData={userrData}/> :null}
                         </StyledBadge>
                     </Box>
                 </Toolbar>

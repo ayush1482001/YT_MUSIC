@@ -16,19 +16,17 @@ const LoginButt = (prop) => {
 
     const handleLogin = () => {
         if(data?.status == 'success' ){
-        // const userData=JSON.parse(localStorage.getItem("loginStatus"));
         const updateData=[{}];
         localStorage.setItem("loginStatus",JSON.stringify(updateData))
         window.location.reload();
-        // localStorage.setItem("loginStatus",JSON.stringify(d));
         }else{
-            navigate('./login');
+            navigate('/login');
         }
     }
-    // console.log(prop.st.current)
+   
   return<>
        {!prop.st.current?  <Button onClick={handleLogin} className='newPlaylist' startIcon={<PersonIcon />} sx={{ marginBottom: '2rem' }}>{data.status == 'success' ? "Logout" : "Login"}</Button>:
-       <IconButton sx={{boxShadow:'0px 0px 4px red',marginBottom:'2vh'}}><PersonIcon fontSize="medium" sx={{color:'white'}}/></IconButton>}
+       <IconButton onClick={handleLogin} sx={{boxShadow:'0px 0px 4px red',marginBottom:'2vh'}}><PersonIcon fontSize="medium" sx={{color:'white'}}/></IconButton>}
        
   </>
 }

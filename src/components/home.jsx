@@ -88,7 +88,7 @@ const [fulldata,setfulldata]=useState([]);
       :
         data.data && (data.data).map((e,ind) => {
           return <>
-            <Grid  key={ind} item lg={2.4} >
+            <Grid  key={ind}  item lg={2.8} xl={2.2} >
               <ActionAreaCard key={ind} details={e}  />
             </Grid>
           </>

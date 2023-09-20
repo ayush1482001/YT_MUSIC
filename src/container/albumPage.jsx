@@ -45,6 +45,7 @@ import Explore from '../components/explore';
 import { useNavigate } from 'react-router-dom';
 import AlbumSongList from '../components/musicList';
 import LoginButton from '../components/LoginButt'
+import Avtr from '../components/Avtr';
 import {
     createBrowserRouter,
     RouterProvider,
@@ -268,7 +269,7 @@ function AlbumMusicPage() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#" />
+                        {userrData ? <Avtr userrData={userrData}/> :null}
                         </StyledBadge>
                     </Box>
                 </Toolbar>

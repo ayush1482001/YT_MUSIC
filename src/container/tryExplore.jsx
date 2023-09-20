@@ -34,6 +34,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import InputBase from '@mui/material/InputBase';
 import { alpha } from '@mui/material/styles';
 //=================================
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 import Avatar from '@mui/material/Avatar';
 import { blueGrey } from '@mui/material/colors';
 import TapAndPlayIcon from '@mui/icons-material/TapAndPlay';
@@ -209,6 +211,14 @@ export default function TryExplore() {
 
     }, []);
 
+    const [anchorEl, setAnchorEl] = React.useState(null);
+  const openup = Boolean(anchorEl);
+  const handleClick2 = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
     const handleDrawerOpen = () => {
         setOpen(true);
         menuSt.current = false;
@@ -268,7 +278,40 @@ export default function TryExplore() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#" />
+                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#"  aria-controls={openup ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openup ? 'true' : undefined}
+        onClick={handleClick2} />
+                            <Menu
+     
+     id="basic-menu"
+     anchorEl={anchorEl}
+     open={openup}
+     onClose={handleClose}
+     MenuListProps={{
+       'aria-labelledby': 'basic-button',
+     }}
+   >
+    {userrData?.status ? <>
+    
+        <Box sx={{padding:'10px 50px 10px 30px'}}>
+       
+       <Box sx={{display:'flex',alignItems:'center',gap:'1vw'}}>
+       <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#"  
+       />
+       
+       <h2 style={{display:'inline-block' ,fontFamily:'verdana'}}>{userrData?.status == "success" ? userrData?.data.name :"username"}</h2>
+       </Box>
+       <span>{userrData?.status == "success" ? userrData?.data.email :"user Email"}</span>
+        </Box>
+        </> :
+        <Box sx={{padding:'10px 50px 10px 30px',display:'flex',alignItems:'center',gap:'1vw'}}>
+            <Avatar src="#"  /> 
+       <h6 style={{fontWeight:'600'}}>Seems like you are not logged in. </h6>
+        </Box>
+        }
+    
+   </Menu>
                         </StyledBadge>
                     </Box>
                 </Toolbar>

@@ -11,6 +11,7 @@ import TryLiked from './container/tryLikedPlayList';
 import TryPrem from './container/trypremium';
 import Login from "./components/loginPage"
 import Signup from "./components/signUp"
+import Err from "./components/404"
 import {
   createBrowserRouter,
   RouterProvider,
@@ -124,9 +125,17 @@ function App() {
         </>
       ),
     },
+    {
+      path: '*',
+      element: (
+        <>
+       <Err/>
+        </>
+      ),
+    },
   
   ])
-  // <Outlet/>
+
 
   return (<>
     <RouterProvider router={router} />

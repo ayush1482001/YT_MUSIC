@@ -242,10 +242,10 @@ const songId = songchoosen._id; //
         >
           <source src={songchoosen.audio_url} type="audio/mpeg" />
         </audio>
-    <SkipPreviousIcon  className="icon" sx={{ height: '40%', width: "30%" }}></SkipPreviousIcon>
+    <SkipPreviousIcon onClick={()=>{alert("single album ! it will not work")}} className="icon" sx={{ height: '40%', width: "30%" }}></SkipPreviousIcon>
     {!isPlaying ? <PlayArrowIcon sx={{ height: '40%', width: "30%" }} onClick={togglePlay}></PlayArrowIcon> : <PauseIcon sx={{ height: '40%', width: "30%" }} onClick={togglePlay}></PauseIcon>}
     
-            <SkipNextIcon className="icon" sx={{ height: '40%', width: "30%" }}></SkipNextIcon>
+            <SkipNextIcon onClick={()=>{alert("single album ! it will not work")}} className="icon" sx={{ height: '40%', width: "30%" }}></SkipNextIcon>
         </div>
         <div className="details2">
             <img className="img2" src={play} alt="" />

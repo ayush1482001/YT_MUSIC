@@ -39,6 +39,7 @@ import { blueGrey } from '@mui/material/colors';
 import TapAndPlayIcon from '@mui/icons-material/TapAndPlay';
 import Subnav from '../components/subnav';
 import { useDispatch } from 'react-redux'
+import Avtr from '../components/Avtr';
 
 import Prem from '../components/prem';
 import { useNavigate } from 'react-router-dom';
@@ -266,7 +267,7 @@ export default function TryUpgrade() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#" />
+                            {userrData ? <Avtr userrData={userrData}/> :null}
                         </StyledBadge>
                     </Box>
                 </Toolbar>
