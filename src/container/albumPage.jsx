@@ -45,7 +45,7 @@ import Explore from '../components/explore';
 import { useNavigate } from 'react-router-dom';
 import AlbumSongList from '../components/musicList';
 import LoginButton from '../components/LoginButt'
-import Avtr from '../components/Avtr';
+import Avtr from '../components/avtr';
 import {
     createBrowserRouter,
     RouterProvider,

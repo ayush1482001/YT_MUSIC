@@ -39,7 +39,7 @@ import { blueGrey } from '@mui/material/colors';
 import TapAndPlayIcon from '@mui/icons-material/TapAndPlay';
 import Subnav from '../components/subnav';
 import { useDispatch } from 'react-redux'
-import Avtr from '../components/Avtr';
+import Avtr from '../components/avtr';
 
 import Prem from '../components/prem';
 import { useNavigate } from 'react-router-dom';

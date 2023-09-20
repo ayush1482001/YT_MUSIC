@@ -45,7 +45,7 @@ import Explore from '../components/explore';
 import SinglePlay from '../components/singlePlay'
 import { useNavigate } from 'react-router-dom';
 import LoginButton from '../components/LoginButt'
-import Avtr from '../components/Avtr';
+import Avtr from '../components/avtr';
 import {
     createBrowserRouter,
     RouterProvider,

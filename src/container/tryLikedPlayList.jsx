@@ -45,7 +45,7 @@ import Upgradee from '../components/upgrade';
 import Explore from '../components/explore';
 import LikedPlaylist from '../components/likedPlaylist';
 import { useNavigate } from 'react-router-dom';
-import Avtr from '../components/Avtr';
+import Avtr from '../components/avtr';
 import {
     createBrowserRouter,
     RouterProvider,
