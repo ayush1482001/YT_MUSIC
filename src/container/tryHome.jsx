@@ -279,7 +279,7 @@ export default function TryHome() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                         { userrData ? <Avtr userrData={userrData}/>: null}
+                        {userrData ? <Avtr userrData={userrData}/> :null}
                         </StyledBadge>
                     </Box>
                 </Toolbar>

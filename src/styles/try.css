@@ -64,11 +64,6 @@
   display: flex !important;
   color: white !important;
   width: 100% !important;
-
-  /* background-color: rgb(7, 233, 7)!important; */
-
-  /* background-image: linear-gradient(rgb(7, 40, 73), black, black, black, black),
-    url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg"); */
 }
 .css-9mgopn-MuiDivider-root {
   background-color: grey !important;
@@ -81,6 +76,14 @@
   justify-content: center;
 }
 
-.pagination {
+/* .pagination {
   color: blue!important;
+} */
+@media (max-width: 500px){
+  
+  .css-8u39c-MuiTypography-root img{
+    display: none !important;
+  }
+
+ 
 }
