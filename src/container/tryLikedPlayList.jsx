@@ -245,7 +245,7 @@ export default function TryLiked() {
                     </IconButton>
 
                     <Typography variant="h6" noWrap component="div">
-                        {menuSt.current ? <img className="logosecond" src={ytlogo} alt="logo" /> : null}
+                        {menuSt.current ? <img className="logosecond" src={ytlogo} onClick={()=>{navigate('/')}} alt="logo" /> : null}
                     </Typography>
                     <Search className='searchInput'
                     >
@@ -263,11 +263,6 @@ export default function TryLiked() {
                     <Box
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button sx={{ color: '#fff' }}>
-                            <TapAndPlayIcon />
-                        </Button>
-                    </Box>
                     <Box>
                         <StyledBadge
                             overlap="circular"
@@ -284,7 +279,7 @@ export default function TryLiked() {
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon className='menuIcon' />
                     </IconButton>
-                    <Box className="logo"><img src={ytlogo} alt="logo" /></Box>
+                    <Box className="logo"><img src={ytlogo} onClick={()=>{navigate('/')}} alt="logo" /></Box>
                 </DrawerHeader>
 
                 <List sx={{ background: "black", color: "white", height: '100%' }}>
@@ -396,9 +391,7 @@ export default function TryLiked() {
 
                     {!menuSt.current ? <><div className="divider"><Divider /></div>
 
-                        <Button className='newPlaylist' startIcon={<AddIcon />}>
-                            New playlist
-                        </Button></>
+                        </>
                         : null
                     }
                 </List>

@@ -40,15 +40,16 @@ flex-wrap: wrap;
 
 
 .img2{
+  
     margin-right: 2vw;
-    width: 70%;
-    height: 70%;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
 }
 .img20{
   margin-right: 2vw;
-  width: 70%;
-  height: 70%;
+  width: 8vh;
+  height: 8vh;
   border-radius: 50%;
     animation: rotation 5s infinite linear;
 

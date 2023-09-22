@@ -39,7 +39,7 @@ const navigate=useNavigate();
     <div className="playlist">
     {likedSong.length>0 ? 
     <Playlist songlist={likedSong}/> 
-    : <div className="EmptyErr"><Button variant="contained" className="backBtn" onClick={() => navigate(-1)}  color="primary">Back</Button> <span class="loader2">Play list is Empty OR user is not Loggedin</span></div>}
+    : <div className="EmptyErr"> <span class="loader2">Play list is Empty OR user is not Loggedin</span></div>}
     </div>
     </>
 }

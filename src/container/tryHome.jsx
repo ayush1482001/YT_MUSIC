@@ -253,7 +253,7 @@ export default function TryHome() {
                     </IconButton>
 
                     <Typography variant="h6" noWrap component="div">
-                        {menuSt.current ? <img className="logosecond" src={ytlogo} alt="logo" /> : null}
+                        {menuSt.current ? <img className="logosecond" src={ytlogo} alt="logo" onClick={()=>{navligate('/')}} /> : null}
                     </Typography>
                     <Search className='searchInput'
                     >
@@ -271,11 +271,7 @@ export default function TryHome() {
                     <Box
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button sx={{ color: '#fff' }}>
-                            <TapAndPlayIcon />
-                        </Button>
-                    </Box>
+                    
                     <Box>
 
                         <StyledBadge
@@ -404,12 +400,7 @@ export default function TryHome() {
                     </ListItem>
 
                     {!menuSt.current ? <><div className="divider"><Divider /></div>
-                        <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
-                            <Button className='newPlaylist' startIcon={<AddIcon />} onClick={() => alert("functionality is in progress")}>
-                                New playlist
-                            </Button>
-
-                        </Box>
+                        
                     </>
                         : null
                     }
