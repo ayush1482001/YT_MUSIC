@@ -34,3 +34,9 @@
     /* background-color: yellow!important; */
     display: flex !important;
 }
+.mood_category button:hover{
+    background-color: rgba(47, 0, 255, 0.37) !important;
+  }
+  .explore_category>button:hover{
+    background-color: rgba(255, 255, 255, 0.36) !important;
+    }

@@ -131,4 +131,17 @@
     .playy{
       display: none !important;
     }
+    .musicbar h3{
+      font-size: 120%;
+    }
+    .musicbar input{
+      width:100% !important;
+      height: 2px!important; 
+    }
+    .musicbar input{
+  width:100% !important;
+  height: 2px!important; 
+}
+
+
     

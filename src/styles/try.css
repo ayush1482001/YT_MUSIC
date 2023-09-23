@@ -29,10 +29,6 @@
 .css-1r8v3uq-MuiPaper-root-MuiAppBar-root {
   box-shadow: none !important;
 }
-.css-1r9jet7 {
-  justify-content: flex-start !important;
-  color: white !important;
-}
 .css-zxdg2z {
   padding: 0 !important;
 }
@@ -67,18 +63,18 @@
 }
 .css-9mgopn-MuiDivider-root {
   background-color: grey !important;
+  
   width: 80%;
-  margin-top: 1vh;
+  margin-top: vh;
 }
 
 .divider {
   display: flex;
   justify-content: center;
+  
 }
 
-/* .pagination {
-  color: blue!important;
-} */
+
 @media (max-width: 500px){
   
   .css-8u39c-MuiTypography-root img{
@@ -86,4 +82,127 @@
   }
 
  
+}
+.searchInput{
+  width: 34vw!important;
+  height: 80%!important;
+  display: flex;
+  align-items: center;
+  border-radius: 12px!important;
+  border: 1px solid gray;
+}
+
+.inp input{
+
+  width: 30vw!important;
+
+  
+}
+.navigationbar{
+  background-color: rgb(0, 0, 0)!important;
+}
+/* .container{
+  background-color: rgb(0, 0, 0);
+  min-height: 100vh;
+  min-width: 100vw;
+}
+.aside{
+  background-color: black;
+  min-height: 100vh;
+  width: 13%;
+  margin-top: 80px!important;
+  background-color: rgb(46, 251, 0) !important;
+  box-shadow: 10px 10px 15px red !important;
+}
+.body{
+  background-color: rgb(39, 38, 40);
+  min-height: 100vh;
+  width: 50%;
+  margin-top: 80px!important;
+  background-color: rgb(46, 251, 0) !important;
+  box-shadow: 10px 10px 15px red !important; 
+}
+.sideNav li{
+  border-radius: 1.5vh;
+  height: 7vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  list-style-type:none;
+  display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.sideNav{
+  padding-bottom: 4vh;
+  border-bottom: 2px solid grey;
+  background-color: green !important;
+} */
+.DrawerHead{
+  background-color: black!important;
+}
+.home-container{
+  min-height: 90vh;
+  background-image: linear-gradient(rgb(7, 40, 73), black, black, black, black),
+  url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg");
+  padding-left: 20px;
+  width: 100%!important;
+  position: relative !important;
+} 
+
+@media (min-width:300px) and  (max-width: 600px){
+  .css-hyum1k-MuiToolbar-root {
+    min-height: 48px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .css-8u39c-MuiTypography-root img{
+    display: none !important;
+  }
+  .mix{
+    font-size: 28px;
+  }
+}
+
+
+@media (max-width: 582px){
+  .musicbar {
+    font-size: 15px!important;
+  }
+  .home-container{
+    padding-left: 0!important;
+  }
+}
+@media (max-width: 300px){
+  .css-hyum1k-MuiToolbar-root input{
+    width: 50%!important;
+  }
+  .css-8u39c-MuiTypography-root img{
+    /* background-color: yellow!important; */
+    display: none !important;
+  }
+  .mix{
+    font-size: 23px;
+  }
+  .details2 h3 {
+    display: none;
+  }
+}
+
+.css-hyum1k-MuiToolbar-root{
+  justify-content: space-between;
+}
+
+.pagination{
+  color: white !important;
+}
+
+.css-wjh20t-MuiPagination-ul button {
+  color: white !important;
+}
+
+.Home-sub-container{
+  margin-top: 30px;
+  min-height: 80vh;
+  display: flex!important;
+  justify-content: center !important;
+  align-items: center;
 }
