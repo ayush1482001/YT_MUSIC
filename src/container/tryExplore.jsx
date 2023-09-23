@@ -262,7 +262,7 @@ export default function TryExplore() {
                             placeholder="Search songs, albums, artists, podcasts"
                             inputProps={{ 'aria-label': 'search' }}
                             sx={{ overflow: 'hidden' }}
-                            onChange={() => alert("search functionality only work in home page...")}
+                            onChange={() => alert("Search functionality only work in home page...")}
                         />
                     </Search>
                     <Box
