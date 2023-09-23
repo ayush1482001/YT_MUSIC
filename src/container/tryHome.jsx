@@ -400,12 +400,7 @@ export default function TryHome() {
                         </ListItemButton>
                     </ListItem>
 
-                    {!menuSt.current ? <><div className="divider"><Divider /></div>
-                        
-                    </>
-                        : null
-                    }
-
+                   <div className="divider"><Divider /></div>
                 </List>
                 <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 

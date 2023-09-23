@@ -425,11 +425,7 @@ export default function TryExplore() {
                             <ListItemText primary={'Upgrade'} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
-                    {!menuSt.current ? <><div className="divider"><Divider /></div>
-
-                    </>
-                        : null
-                    }
+                    <div className="divider"><Divider /></div>
                 </List>
                 <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 

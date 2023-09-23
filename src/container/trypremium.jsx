@@ -263,7 +263,7 @@ export default function TryUpgrade() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            {userrData ? <Avtr userrData={userrData}/> :null}
+                            <Avtr userrData={userrData}/> 
                         </StyledBadge>
                     </Box>
                 </Toolbar>
@@ -380,9 +380,7 @@ export default function TryUpgrade() {
                             <ListItemText primary={'Upgrade'} sx={{ opacity: open ? 1 : 0 }} />
                         </ListItemButton>
                     </ListItem>
-                    {menuSt.current ? null : <><div className="divider"><Divider /></div>
-                        </>
-                    }
+                    <div className="divider"><Divider /></div>
                 </List>
                 <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 

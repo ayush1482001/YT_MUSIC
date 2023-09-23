@@ -269,7 +269,7 @@ export default function TryLiked() {
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                           {userrData ? <Avtr userrData={userrData}/> :null}
+                           <Avtr userrData={userrData}/> 
                         </StyledBadge>
                     </Box>
                 </Toolbar>
@@ -389,11 +389,7 @@ export default function TryLiked() {
                         </ListItemButton>
                     </ListItem>
 
-                    {!menuSt.current ? <><div className="divider"><Divider /></div>
-
-                        </>
-                        : null
-                    }
+                    <div className="divider"><Divider /></div>
                 </List>
                 <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 
