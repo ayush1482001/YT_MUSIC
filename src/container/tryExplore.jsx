@@ -206,19 +206,19 @@ export default function TryExplore() {
         if (window.innerWidth <= 1000) {
             setOpen(false);
             menuSt.current = true;
-          } 
+        }
         dispatch(frontRtReducer);
 
     }, []);
 
     const [anchorEl, setAnchorEl] = React.useState(null);
-  const openup = Boolean(anchorEl);
-  const handleClick2 = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+    const openup = Boolean(anchorEl);
+    const handleClick2 = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     const handleDrawerOpen = () => {
         setOpen(true);
         menuSt.current = false;
@@ -229,7 +229,7 @@ export default function TryExplore() {
         setOpen(false);
         menuSt.current = true;
     };
- 
+
 
     return (
         <Box className="homeContainer">
@@ -250,7 +250,7 @@ export default function TryExplore() {
                     </IconButton>
 
                     <Typography variant="h6" noWrap component="div">
-                        {menuSt.current ? <img className="logosecond" src={ytlogo} onClick={()=>{navigate('/')}} alt="logo" /> : null}
+                        {menuSt.current ? <img className="logosecond" src={ytlogo} onClick={() => { navigate('/') }} alt="logo" /> : null}
                     </Typography>
                     <Search className='searchInput'
                     >
@@ -262,52 +262,53 @@ export default function TryExplore() {
                             placeholder="Search songs, albums, artists, podcasts"
                             inputProps={{ 'aria-label': 'search' }}
                             sx={{ overflow: 'hidden' }}
+                            onChange={() => alert("search functionality only work in home page...")}
                         />
                     </Search>
                     <Box
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}></Box>
-                    
+
                     <Box>
                         <StyledBadge
                             overlap="circular"
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                             variant={userrData?.status == "success" ? "dot" : null}
                         >
-                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#"  aria-controls={openup ? 'basic-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={openup ? 'true' : undefined}
-        onClick={handleClick2} />
+                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#" aria-controls={openup ? 'basic-menu' : undefined}
+                                aria-haspopup="true"
+                                aria-expanded={openup ? 'true' : undefined}
+                                onClick={handleClick2} />
                             <Menu
-     
-     id="basic-menu"
-     anchorEl={anchorEl}
-     open={openup}
-     onClose={handleClose}
-     MenuListProps={{
-       'aria-labelledby': 'basic-button',
-     }}
-   >
-    {userrData?.status ? <>
-    
-        <Box sx={{padding:'10px 50px 10px 30px'}}>
-       
-       <Box sx={{display:'flex',alignItems:'center',gap:'1vw'}}>
-       <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#"  
-       />
-       
-       <h2 style={{display:'inline-block' ,fontFamily:'verdana'}}>{userrData?.status == "success" ? userrData?.data.name :"username"}</h2>
-       </Box>
-       <span>{userrData?.status == "success" ? userrData?.data.email :"user Email"}</span>
-        </Box>
-        </> :
-        <Box sx={{padding:'10px 50px 10px 30px',display:'flex',alignItems:'center',gap:'1vw'}}>
-            <Avatar src="#"  /> 
-       <h6 style={{fontWeight:'600'}}>Seems like you are not logged in. </h6>
-        </Box>
-        }
-    
-   </Menu>
+
+                                id="basic-menu"
+                                anchorEl={anchorEl}
+                                open={openup}
+                                onClose={handleClose}
+                                MenuListProps={{
+                                    'aria-labelledby': 'basic-button',
+                                }}
+                            >
+                                {userrData?.status ? <>
+
+                                    <Box sx={{ padding: '10px 50px 10px 30px' }}>
+
+                                        <Box sx={{ display: 'flex', alignItems: 'center', gap: '1vw' }}>
+                                            <Avatar sx={{ background: '#0786ed' }} alt={userrData?.status == "success" ? userrData?.data.name : null} src="#"
+                                            />
+
+                                            <h2 style={{ display: 'inline-block', fontFamily: 'verdana' }}>{userrData?.status == "success" ? userrData?.data.name : "username"}</h2>
+                                        </Box>
+                                        <span>{userrData?.status == "success" ? userrData?.data.email : "user Email"}</span>
+                                    </Box>
+                                </> :
+                                    <Box sx={{ padding: '10px 50px 10px 30px', display: 'flex', alignItems: 'center', gap: '1vw' }}>
+                                        <Avatar src="#" />
+                                        <h6 style={{ fontWeight: '600' }}>Seems like you are not logged in. </h6>
+                                    </Box>
+                                }
+
+                            </Menu>
                         </StyledBadge>
                     </Box>
                 </Toolbar>
@@ -317,7 +318,7 @@ export default function TryExplore() {
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon className='menuIcon' />
                     </IconButton>
-                    <Box className="logo"><img src={ytlogo} onClick={()=>{navigate('/')}} alt="logo" /></Box>
+                    <Box className="logo"><img src={ytlogo} onClick={() => { navigate('/') }} alt="logo" /></Box>
                 </DrawerHeader>
                 <List sx={{ background: "black", color: "white", height: '100%' }}>
                     <ListItem key={'Home'} disablePadding sx={{ display: 'block' }}>
@@ -425,16 +426,16 @@ export default function TryExplore() {
                         </ListItemButton>
                     </ListItem>
                     {!menuSt.current ? <><div className="divider"><Divider /></div>
-                       
+
                     </>
                         : null
                     }
                 </List>
                 <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 
-                    
-                       <LoginButton st={menuSt}/>
-                   
+
+                    <LoginButton st={menuSt} />
+
 
                 </Box>
 
