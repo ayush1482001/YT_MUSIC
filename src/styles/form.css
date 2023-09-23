@@ -132,3 +132,24 @@ body{
     left:2vw!important;
     width:max-content!important;
 }
+@media (max-width:600px){
+.back2{
+    display: none!important;
+}
+.background2{
+    width: 100vw !important;
+    min-height: 100vh!important;
+   position: static!important;
+  
+}
+.form{
+    width: 100%!important;
+}
+#root{
+    width: 100vw!important;
+height: 100vh!important;
+}
+.shape{
+    display: none!important;
+}
+}
