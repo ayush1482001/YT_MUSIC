@@ -1,12 +1,12 @@
 .newPlaylist {
   margin-top: 4vh !important;
   width: 90%;
-  
+
   border-radius: 50px !important;
   padding: 10px 0 !important;
   color: white !important;
   border: none !important;
-  
+
   background-color: rgb(255 255 255 / 10%) !important;
   font-weight: 600 !important;
   font-family: Arial, Helvetica, sans-serif !important;
@@ -18,30 +18,40 @@
 .newPlaylist:hover {
   background-color: rgba(255, 255, 255, 0.168) !important;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
-  background-color: rgb(6, 6, 6) !important;
-  border-right: 1px solid rgb(29, 29, 29) !important;
+
+.mainList {
+  background: black;
+  color: white;
+  height: 100%;
 }
-.css-hyum1k-MuiToolbar-root {
-  box-shadow: -5px -4px 2px rgb(10, 10, 10);
+.drawer>div {
+  border-right:1px solid rgb(44, 43, 43) !important;
+ 
+}
+.appbar>div{
+  box-shadow: -1px -2px 4px rgb(0, 0, 0);
   border-bottom: 1px solid rgb(29, 29, 29) !important;
+  background-color: black!important;
+  
 }
 .css-1r8v3uq-MuiPaper-root-MuiAppBar-root {
   box-shadow: none !important;
 }
-.css-zxdg2z {
-  padding: 0 !important;
+.db {
+  padding: 0px !important;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper li {
+.mainList li {
+  
   border-radius: 1vw !important;
   padding: 1vh 0 !important;
   font-weight: bold !important;
   font-size: 37px !important;
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper ul li:first-child {
+.mainList li:first-child {
   background-color: rgba(255, 255, 255, 0.1) !important;
+ 
 }
-.css-12i7wg6-MuiPaper-root-MuiDrawer-paper li:hover {
+.mainList li:hover {
   background-color: rgba(92, 92, 92, 0.641) !important;
 }
 .menuIcon {
@@ -63,7 +73,7 @@
 }
 .divider hr {
   background-color: grey !important;
-  
+
   width: 80%;
   height: 2px;
   margin-top: vh;
@@ -72,35 +82,27 @@
 .divider {
   display: flex;
   justify-content: center;
-  
 }
 
-
-@media (max-width: 500px){
-  
-  .css-8u39c-MuiTypography-root img{
+@media (max-width: 500px) {
+  .appbar img {
     display: none !important;
   }
-
- 
 }
-.searchInput{
-  width: 34vw!important;
-  height: 80%!important;
+.searchInput {
+  width: 34vw !important;
+  height: 80% !important;
   display: flex;
   align-items: center;
-  border-radius: 12px!important;
+  border-radius: 12px !important;
   border: 1px solid gray;
 }
 
-.inp input{
-
-  width: 30vw!important;
-
-  
+.inp input {
+  width: 30vw !important;
 }
-.navigationbar{
-  background-color: rgb(0, 0, 0)!important;
+.navigationbar {
+  background-color: rgb(0, 0, 0) !important;
 }
 /* .container{
   background-color: rgb(0, 0, 0);
@@ -137,50 +139,49 @@
   border-bottom: 2px solid grey;
   background-color: green !important;
 } */
-.DrawerHead{
-  background-color: black!important;
+.DrawerHead {
+  background-color: black !important;
+  box-shadow: 1px 1px 10px rgb(0, 0, 0) inset !important;
 }
-.home-container{
-  min-height: 100%!important;
+.home-container {
+  min-height: 100% !important;
   background-image: linear-gradient(rgb(7, 40, 73), black, black, black, black),
-  url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg");
+    url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg");
   padding-left: 20px;
-  width: 100%!important;
+  width: 100% !important;
   position: relative !important;
-} 
+}
 
-@media (min-width:300px) and  (max-width: 600px){
-  .css-hyum1k-MuiToolbar-root {
+@media (min-width: 300px) and (max-width: 600px) {
+  .appbar>div {
     min-height: 48px;
     display: flex;
     justify-content: space-between;
   }
-  .css-8u39c-MuiTypography-root img{
+  .appbar img {
     display: none !important;
   }
-  .mix{
+  .mix {
     font-size: 28px;
   }
 }
 
-
-@media (max-width: 582px){
+@media (max-width: 582px) {
   .musicbar {
-    font-size: 15px!important;
+    font-size: 15px !important;
   }
-  .home-container{
-    padding-left: 0!important;
+  .home-container {
+    padding-left: 0 !important;
   }
 }
-@media (max-width: 300px){
-  .css-hyum1k-MuiToolbar-root input{
-    width: 50%!important;
+@media (max-width: 300px) {
+  .appbar input {
+    width: 50% !important;
   }
-  .css-8u39c-MuiTypography-root img{
-    /* background-color: yellow!important; */
+  .appbar img {
     display: none !important;
   }
-  .mix{
+  .mix {
     font-size: 23px;
   }
   .details2 h3 {
@@ -188,22 +189,20 @@
   }
 }
 
-.css-hyum1k-MuiToolbar-root{
-  justify-content: space-between;
+.appbar {
+  justify-content: space-between!important;
 }
 
-.pagination{
+.pagination {
   color: white !important;
 }
 
-.css-wjh20t-MuiPagination-ul button {
-  color: white !important;
-}
 
-.Home-sub-container{
+
+.Home-sub-container {
   margin-top: 30px;
   min-height: 80vh;
-  display: flex!important;
+  display: flex !important;
   justify-content: center !important;
   align-items: center;
 }

@@ -238,7 +238,7 @@ export default function TryHome() {
     return (
         <Box className="homeContainer">
             <CssBaseline />
-            <AppBar position="fixed" open={open} sx={{ background: "black" }}>
+            <AppBar className='appbar' position="fixed" open={open} >
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -286,7 +286,7 @@ export default function TryHome() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
+            <Drawer className='drawer' variant="permanent" open={open}>
                 <DrawerHeader className='DrawerHead' >
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon className='menuIcon' />
@@ -294,7 +294,7 @@ export default function TryHome() {
                     <Box className="logo"><img src={ytlogo} alt="logo" /></Box>
                 </DrawerHeader>
 
-                <List sx={{ background: "black", color: "white", height: '100%' }}>
+                <List className='mainList' >
 
                     <ListItem key={'Home'} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
@@ -412,10 +412,10 @@ export default function TryHome() {
                 </Box>
 
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" className='db' sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                <Box className='home-container'>
+                <Box  className='home-container'>
                     {/* <Subnav /> */}
                     <Home searchValue={searchValue} />
 
