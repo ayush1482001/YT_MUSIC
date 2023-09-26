@@ -31,7 +31,7 @@ const Avt=({userrData})=>{
        'aria-labelledby': 'basic-button',
      }}
    >
-    {userrData?.status ? <>
+    {userrData?.status ? 
     
         <Box sx={{padding:'10px 50px 10px 30px'}}>
        
@@ -43,7 +43,7 @@ const Avt=({userrData})=>{
        </Box>
        <span>{userrData?.status == "success" ? userrData?.data.email :"user Email"}</span>
         </Box>
-        </> :
+         :
         <Box sx={{padding:'10px 50px 10px 30px',display:'flex',alignItems:'center',gap:'1vw'}}>
             <Avatar src="#"  /> 
        <h6 style={{fontWeight:'600'}}>Seems like you are not logged in. </h6>

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 
 const Alerttext=(prop)=>{
-    const [status,setStatus]=useState(false);
+    const [status,setStatus]=useState(true);
    
     const handleChange=()=>{
         setStatus(true);
@@ -13,9 +13,7 @@ const Alerttext=(prop)=>{
         
     }
     return<>
-    <Button  onClick={handleChange}>change karo</Button>
-    <Alert severity="success" sx={{position:'fixed',bottom:0,width:'100%',fontSize:'1rem',display:status? "block":"none",height:'max-content' }}>
-  <AlertTitle>Success</AlertTitle>
+    <Alert severity={prop.status =="fail"?"error":"success"} sx={{position:'fixed',zIndex:'1000000',bottom:0,right:0,width:'100%',fontSize:'1rem',display:status? "flex":"none",alignItems:'center', height:'8vh' }}>
   <strong>{prop.text}</strong>
 </Alert>
     </>

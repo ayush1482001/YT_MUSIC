@@ -46,6 +46,7 @@ import Upgradee from '../components/upgrade';
 import Explore from '../components/explore';
 import { useNavigate } from 'react-router-dom';
 import LoginButton from '../components/LoginButt'
+import Alert from '../components/alert'
 import {
     createBrowserRouter,
     RouterProvider,
@@ -229,7 +230,7 @@ export default function TryExplore() {
         setOpen(false);
         menuSt.current = true;
     };
-
+const[open2,setOpen2]=useState(false);
 
     return (
         <Box className="homeContainer">
@@ -262,7 +263,8 @@ export default function TryExplore() {
                             placeholder="Search songs, albums, artists, podcasts"
                             inputProps={{ 'aria-label': 'search' }}
                             sx={{ overflow: 'hidden' }}
-                            onChange={() => alert("Search functionality only work in home page...")}
+                            onChange={() => {setOpen2(true)
+                            setTimeout(()=>{setOpen2(false)}, 2000)}}
                         />
                     </Search>
                     <Box
@@ -289,7 +291,7 @@ export default function TryExplore() {
                                     'aria-labelledby': 'basic-button',
                                 }}
                             >
-                                {userrData?.status ? <>
+                                {userrData?.status ? 
 
                                     <Box sx={{ padding: '10px 50px 10px 30px' }}>
 
@@ -301,7 +303,7 @@ export default function TryExplore() {
                                         </Box>
                                         <span>{userrData?.status == "success" ? userrData?.data.email : "user Email"}</span>
                                     </Box>
-                                </> :
+                                :
                                     <Box sx={{ padding: '10px 50px 10px 30px', display: 'flex', alignItems: 'center', gap: '1vw' }}>
                                         <Avatar src="#" />
                                         <h6 style={{ fontWeight: '600' }}>Seems like you are not logged in. </h6>
@@ -441,12 +443,13 @@ export default function TryExplore() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                <Box div className='home-container'>
+                <Box className='home-container'>
 
                     <Explore />
 
                 </Box>
             </Box>
+           {open2?   <Alert status={"fail"}  text={"search functionality only works in homepage for now..."} />:null}
         </Box>
     );
 }

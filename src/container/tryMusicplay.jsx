@@ -397,7 +397,7 @@ export default function TryLib() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                <Box div className='home-container'>
+                <Box className='home-container'>
                     <Button variant="outlined" color='primary' className="backBtn2" onClick={() => navigate(-1)}  >Back</Button>
                     <Musicpage />
                     {/* <h1>working</h1> */}

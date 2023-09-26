@@ -36,7 +36,6 @@ const Library = () => {
            {arr && arr.map((e)=>{
             return<>
             <AlbumCard details={e} onClick={handleLikePlayList}/>
-            {/* <h2 key={e._id}>{e.title}</h2> */}
             </>
            })}
             </div> 

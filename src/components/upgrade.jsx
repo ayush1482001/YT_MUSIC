@@ -51,8 +51,8 @@ const Upgradee = () => {
         </div>
         <div className="forth_poster">
             <div> <h1> Download your favorite 
-                <h1 />
-                <h1></h1>tracks</h1>
+                </h1>
+                <h1>tracks</h1>
                 <h4>No connection? No problem. Take your songs, albums <br /> and playlists offline..</h4>
             </div>
         </div >

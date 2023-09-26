@@ -67,7 +67,7 @@ const Explore = () => {
       <div className="subnavigation" >
         <Grid container spacing={2} >
           <Grid item className='explore_category' xs={12} sm={12} md={6} >
-            <Button variant="contained" sx={{color:catVal=="newrelease" ? "red" : null,borderBottom: catVal=="newrelease" ? "3px solid red":null}} onClick={handleNewRelease} startIcon={<NewReleasesIcon />} activeColor="red">New releases</Button>
+            <Button variant="contained" sx={{color:catVal=="newrelease" ? "red" : null,borderBottom: catVal=="newrelease" ? "3px solid red":null}} onClick={handleNewRelease} startIcon={<NewReleasesIcon />} >New releases</Button>
           </Grid>
           {/* <Grid item className='explore_category' xs={12} sm={12} md={4}>
             <Button variant="contained" sx={{color:catVal=="chart" ? "red" : null,borderBottom: catVal=="chart" ? "3px solid red":null}}  onClick={handleTrending} startIcon={<TrendingUpIcon />}>Charts</Button>
@@ -106,13 +106,12 @@ const Explore = () => {
       <div className="explore_mainContainer">
         <Grid container sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: '60vh' }} spacing={2}>
           {!exploreData.data ? <Spinner2 /> : null}
-          {exploreData.data && (exploreData.data).map((e,ind) => {
-            return <>
+          {exploreData.data && (exploreData.data).map((e,ind) =>
+           
               <Grid key={ind} item lg={2.4} >
                 <Songcard details={e} />
               </Grid>
-            </>
-          })}
+          )}
           {exploreData.data && <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width: "100%", color: 'white', margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} />}
         </Grid>
       </div>

@@ -14,7 +14,7 @@ import Songcard from './songcard'
 
 
 
-const Home = (prop) => { 
+const Home = (prop) => {
   const [page, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -38,14 +38,14 @@ const Home = (prop) => {
       }
     };
     fetchData().then((d) => {
-        setData(d);
+      setData(d);
     });
   }, [page]);
-  
-const [fulldata,setfulldata]=useState([]);
+
+  const [fulldata, setfulldata] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch( `https://academics.newtonschool.co/api/v1/music/album`, { headers });
+      const response = await fetch(`https://academics.newtonschool.co/api/v1/music/album`, { headers });
       if (response.ok) {
         const data = await response.json();
         return data;
@@ -58,48 +58,49 @@ const [fulldata,setfulldata]=useState([]);
       setfulldata(d.data);
     });
   }, []);
-    useEffect(() =>{
-    
-      const array = fulldata.filter((element) =>element.title.toLowerCase().includes(prop.searchValue.toLowerCase())  );
-      setAlldata(array);
-    },[prop.searchValue])
-    
+  useEffect(() => {
 
-  
-  //   console.log("Alldata is,",alldata)
+    const array = fulldata.filter((element) => element.title.toLowerCase().includes(prop.searchValue.toLowerCase()));
+    setAlldata(array);
+  }, [prop.searchValue])
+
+
+
+  // console.log("Alldata is,",alldata)
   // console.log("data is ", data.data);
 
   return <>
-   
 
-   
-    {!prop.searchValue ?  <h1 className='mix'>Mix for you</h1>:<h1 className='mix'>Your search</h1>}
+
+
+    {!prop.searchValue ? <h1 className='mix'>Mix for you</h1> : <h1 className='mix'>Your search</h1>}
     <div className="Home-sub-container">
-      {!data.data ? <Spinner /> : null}
+      {/* {!data.data ? <Spinner /> : null} */}
       <Grid container sx={{ display: "flex", justifyContent: "center" }} spacing={2}>
-       { prop.searchValue ? alldata.map((e,ind)=>{
-        return <>
-        <Grid key={ind}  item lg={2.4} >
-          <ActionAreaCard key={ind} details={e}  />
-        </Grid>
-      </>
-
-       })
-      :
-        data.data && (data.data).map((e,ind) => {
-          return <>
-            <Grid  key={ind}  item lg={2.8} xl={2.2} >
-              <ActionAreaCard key={ind} details={e}  />
+        {prop.searchValue ? alldata?.map((e, ind) => 
+         
+            <Grid key={e._id} item lg={2.4} >
+              <ActionAreaCard details={e} />
             </Grid>
-          </>
-        })
-      }
-        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center',color:'green',width: "100%", margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} /> : null}
+
+
+        )
+          :
+          data.data && (data.data).map((e, ind) => {
+            if (e.songs.length > 0) {
+              return (
+                <Grid key={e._id} item lg={2.8} xl={2.2} >
+                  <ActionAreaCard details={e} />
+                </Grid>
+              )
+            }
+          })
+        }
+        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', color: 'green', width: "100%", margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} /> : null}
       </Grid>
 
 
     </div>
-    {/* <MediaControlCard/> */}
 
   </>
 }

@@ -15,6 +15,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import Typography from '@mui/material/Typography';
+import Alert from './alert';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -72,7 +73,6 @@ const SignUp = () => {
           return response.json();
       } else {
       
-          // Registration failed, handle the error
           if(response.status==403){
             throw new Error("Registration failed! User is already registered");
           }else{
@@ -81,20 +81,25 @@ const SignUp = () => {
       }
   })
   .then(data => {
-      // Handle the response data if needed
       if(data.status=='success'){
-        // alert("successfully registered");
         handleClickOpen();
+        setTimeout(()=>{
+          handleClose();
+
+        },2000)
       }
-      // console.log('Registration response:', data);
+  
     })
     .catch(error => {
-    
-      alert(error);
+      setOpen2(true);
+      setTimeout(()=>{
+        setOpen2(false)
+      },2000)
   });
   
   }
   const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -105,6 +110,7 @@ const SignUp = () => {
   };
 
   return <>
+
    <Button className="back2" onClick={()=>{navigate('/')}} variant="outlined" startIcon={<KeyboardDoubleArrowLeftIcon />}>
 Home
 </Button>
@@ -156,20 +162,17 @@ Home
         </IconButton>
         <DialogContent dividers>
           <Typography gutterBottom>
-          Successfully resistered. Login for enjoy YouTube music advanced facilities.
+          Successfully resistered.😊 Login for enjoy YouTube music advanced facilities.
           </Typography>
         
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose}>
-            Login page
-          </Button>
+         
         </DialogActions>
       </BootstrapDialog>
     </div>
 
-    
-    {/* ================================================= */}
+{open2 ?     <Alert status={"fail"} text={"Wrong input...  please fill all the fields carefully..."}/>:null}
 
   </>
 }

@@ -47,6 +47,7 @@ import Explore from '../components/explore';
 import { useNavigate } from 'react-router-dom';
 import LoginButton from '../components/LoginButt'
 import Avtr from '../components/avtr'
+import Alert from '../components/alert'
 
 import {
     createBrowserRouter,
@@ -416,8 +417,6 @@ export default function TryHome() {
 
                 <Box className='home-container'>
                     {/* <Subnav /> */}
-
-
                     <Home searchValue={searchValue} />
 
                 </Box>

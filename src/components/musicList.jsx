@@ -1,4 +1,5 @@
-import { useState, useEffect,useRef} from 'react';
+
+import React,{ useState, useEffect,useRef} from 'react';
 import  '../styles/albumsonglist.css';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -9,10 +10,11 @@ import store from '../store/store';
 
 
 
+
 const MusicList=()=>{
  
   const navigate=useNavigate();
-  // const allData= useSelector((store)=>store);
+  
   // console.log(allData);
   const [libraryStatus,setLibraryStatus]=useState();
   // const id=allData.albumID.albumId;
@@ -58,7 +60,6 @@ const MusicList=()=>{
       })
     if (!ans.length==0){
       setLibraryStatus(false);
-      // alert("library status is", libraryStatus ? "true":"false");
       arr.forEach(o => {
         if (o._id === obj._id) {
           arr.splice(arr.indexOf(o), 1);
@@ -83,12 +84,9 @@ const MusicList=()=>{
       <Grid item className='detailbox' md={8} sm={8} sx={{ height: '200px' }} xs={12}>
         <div>
           <h1>{musiclist.title}</h1>
-          {musiclist.artists && musiclist.artists.map((e,ind)=>{
-            return <>
-            
-            <span>{e.name}, </span>
-            </>
-          })}
+          {musiclist.artists && musiclist.artists.map((e,ind)=>
+            <span key={ind}>{e.name}, </span>
+          )}
           <h4>{musiclist.songs ? musiclist.songs.length : null} songs</h4>
           <p>
           <Button className='playbutton'  variant="outlined" onClick={()=>{
@@ -106,8 +104,8 @@ const MusicList=()=>{
       <Grid item className='albumsonglist' md={12} sm={12} sx={{ background: 'black', minHeight: '50vh' }} xs={12}>
         <ol>
           {musiclist.songs && musiclist.songs.map((e,ind)=>{
-            return<>
-            <li key={ind} onClick={
+            return(<React.Fragment key={ind}>
+            <li  onClick={
               ()=>{
                 navigate('/musiclist/songplay')
                 localStorage.setItem('songIndex',ind);
@@ -116,7 +114,7 @@ const MusicList=()=>{
             <img src={playIcon} className="playsm2" alt="icon" />
             </li>
             <hr />
-            </>
+            </React.Fragment>)
           })}
         </ol>
       </Grid>

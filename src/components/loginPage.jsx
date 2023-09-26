@@ -14,121 +14,108 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
+import Alert from './alert'
 
 const Login = () => {
-  const [loginDetails,setLoginDetails]=useState({email:"",password:""});
-  const [response,setResponse]=useState(null);
-  const navigate=useNavigate();
-  const url='https://academics.newtonschool.co/api/v1/user/login';
+  const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+  const [response, setResponse] = useState(null);
+  const navigate = useNavigate();
+  const url = 'https://academics.newtonschool.co/api/v1/user/login';
 
-  const method='POST';
+  const method = 'POST';
   const headers = {
     'projectId': 'yda0liol0ofu',
     'Content-Type': 'application/json'
   };
-  const body=JSON.stringify({
+  const body = JSON.stringify({
     "email": loginDetails.email,
     "password": loginDetails.password,
     "appType": "music"
-})
+  })
 
-const[isLoggedIn,setIsLoggedIn]=useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
-const dispatch=useDispatch();
-const LoginStatus={
-  type:"isLoggedin",
-  payload: response,
-};
-dispatch(LoginStatus);
-  
- 
-const handleEmail=(e)=>{
-  setLoginDetails({...loginDetails,email:e.target.value});
-
-}
-const handlePassword=(e)=>{
-  setLoginDetails({...loginDetails,password:e.target.value});
-
-}
-const handleSubmit=(e)=>{
-  e.preventDefault();
-
-  const fetchData = async () => {
-    const response = await fetch(url, {method,headers,body});
-    if (response.ok) {
-      const data = await response.json();
-      return data;
-    } else {
-      throw new Error("couldn't find the acoount ,Please do signup first.");
-    }
+  const dispatch = useDispatch();
+  const LoginStatus = {
+    type: "isLoggedin",
+    payload: response,
   };
-  fetchData().then((d) => {
+  dispatch(LoginStatus);
+
+
+  const handleEmail = (e) => {
+    setLoginDetails({ ...loginDetails, email: e.target.value });
+
+  }
+  const handlePassword = (e) => {
+    setLoginDetails({ ...loginDetails, password: e.target.value });
+
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const fetchData = async () => {
+      const response = await fetch(url, { method, headers, body });
+      if (response.ok) {
+        const data = await response.json();
+        return data;
+      } else {
+        throw new Error("couldn't find the acoount ,Please do signup first.");
+      }
+    };
+    fetchData().then((d) => {
       setResponse(d);
       setOpen(true);
-      localStorage.setItem("loginStatus",JSON.stringify(d));
+      setTimeout(()=>{
+        navigate('/');
+      },1000)
+      localStorage.setItem("loginStatus", JSON.stringify(d));
     }).catch((err) => {
-      alert(err.message);
+      setOpen2(true);
+      setTimeout(()=>{
+        setOpen2(false);
+      },1000)
     });
-    console.log("response is",response)
   }
   const [open, setOpen] = React.useState(false);
-  const theme = useTheme();
-  const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
-  
+  const [open2, setOpen2] = React.useState(false);
+
+
   const handleClickOpen = () => {
     setOpen(true);
   };
-  
+
   const handleClose = () => {
     setOpen(false);
     navigate('/');
-};
+  };
   return <>
-  
-  <Button className="back2" onClick={()=>{navigate('/')}} variant="outlined" startIcon={<KeyboardDoubleArrowLeftIcon />}>
-Home
-</Button>
- <div className="background2">
-        <div className="shape"></div>
-        <div className="shape"></div>
+
+    <Button className="back2" onClick={() => { navigate('/') }} variant="outlined" startIcon={<KeyboardDoubleArrowLeftIcon />}>
+      Home
+    </Button>
+    <div className="background2">
+      <div className="shape"></div>
+      <div className="shape"></div>
     </div>
-    <form className="form"> 
-        <h3>Login Here</h3>
+    <form className="form">
+      <h3>Login Here</h3>
 
-        <label htmlFor="username">Email <span className="req">*</span></label>
-        <input type="email" placeholder="Email" id="username"
-         onChange={handleEmail}/>
+      <label htmlFor="username">Email <span className="req">*</span></label>
+      <input type="email" placeholder="Email" id="username"
+        onChange={handleEmail} />
 
-        <label htmlFor="password">Password <span className="req">*</span></label>
-        <input onChange={handlePassword} type="password" placeholder="Password" id="password"required/>
+      <label htmlFor="password">Password <span className="req">*</span></label>
+      <input onChange={handlePassword} type="password" placeholder="Password" id="password" required />
 
-        <button type="submit" onClick={handleSubmit}>Log In</button>
-        <div className="social">
+      <button type="submit" onClick={handleSubmit}>Log In</button>
+      <div className="social">
         <span>dont't have account ?</span>
-          <div className="fb" onClick={()=>{navigate('/signup')}}>Sign up</div>
-        </div>
+        <div className="fb" onClick={() => { navigate('/signup') }}>Sign up</div>
+      </div>
     </form>
-    <div>
-     
-      <Dialog
-        fullScreen={fullScreen}
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
-      >
-        <DialogTitle id="responsive-dialog-title">
-          {"Successfully logged in...😁"}
-        </DialogTitle>
-        <DialogContent>
-          
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} color='success' autoFocus>
-            close
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
+    {open ? <Alert  text={"succesfully logged in ..."}  /> : null}
+    {open2 ? <Alert status={"fail"} text={"Don't have account plese signup first..."}  /> : null}
 
   </>
 }

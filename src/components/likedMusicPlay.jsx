@@ -79,10 +79,11 @@ export default function App(prop) {
     setCurrentTime(newTime);
     audioRef.current.currentTime = newTime;
   };
+  // console.log(audioRef?.current?.duration)
 
   return <>
     <div className="musicbar">
-      {/* ----------------------------------------------------------- */}
+      
       <style>
         {`
           .custom-seek-bar {
@@ -109,7 +110,7 @@ export default function App(prop) {
         type="range"
         value={currentTime}
         min={0}
-        max={audioRef.current ? audioRef.current.duration : 0}
+        max={typeof(audioRef.current?.duration)==Number ? audioRef.current?.duration : 0}
         step={0.01}
         onChange={handleSliderChange}
         className="custom-seek-bar"
@@ -156,7 +157,7 @@ export default function App(prop) {
         <h2>Your Likes</h2>
         <ol>
           {post && post.map((e, index) =>
-            <li className={currentPage == index ? 'selected' : null} onClick={handleSongSelection}>{e.title}
+            <li key={index} className={currentPage == index ? 'selected' : null} onClick={handleSongSelection}>{e.title}
               <img src={playIcon} className={currentPage == index ? 'playsm3' : "playy"} alt="icon" />
             </li>
           )}

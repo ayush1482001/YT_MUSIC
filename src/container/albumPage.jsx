@@ -253,6 +253,7 @@ function AlbumMusicPage() {
                             placeholder="Search songs, albums, artists, podcasts"
                             inputProps={{ 'aria-label': 'search' }}
                             sx={{ overflow: 'hidden' }}
+                            
                         />
                     </Search>
                     <Box
@@ -263,7 +264,7 @@ function AlbumMusicPage() {
                         <StyledBadge
                             overlap="circular"
                             anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                            variant={userrData?.status == "success" ? "dot" : null}
+                            variant={userrData?.status == "success" ? "dot" : ""}
                         >
                         <Avtr userrData={userrData}/> 
                         </StyledBadge>
@@ -397,14 +398,10 @@ function AlbumMusicPage() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
-                <Box div className='home-container'>
+                <Box className='home-container'>
 
                     <AlbumSongList />
-                    <h1>
-
-
-                    </h1>
-
+                  
 
                 </Box>
             </Box>

@@ -29,9 +29,9 @@ export default function Songcard(prop) {
                 <CardContent>
                     
                     <h3>{musiclist.title}</h3>
-                    <p>{musiclist.artist.map((e)=>{return <>
+                    <p>{musiclist.artist.map((e)=>
                         { e.name +"  "}
-                    </>})}.</p>
+                    )}.</p>
                     
 
                 </CardContent>

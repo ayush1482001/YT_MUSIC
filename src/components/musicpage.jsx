@@ -83,7 +83,6 @@ export default function App() {
   const handleLikePlaylist3 = () => {
     const arr3 = JSON.parse(localStorage.getItem("loginStatus"));
     if (!arr3 || arr3.status != 'success') {
-      // alert("you are not logged in");
       handleClickOpen()
     }
     else {
@@ -180,7 +179,7 @@ export default function App() {
           }
         })
         .catch(error => {
-          console.error('Error:', error);
+          // console.error('Error:', error);
         });
     }
   }, [songData]);
@@ -202,9 +201,13 @@ export default function App() {
 
   const [isPlaying, setIsPlaying] = useState(true);
   const [currentTime, setCurrentTime] = useState(0);
+  const [timeDuration, setTimeDuration] = useState(0);
   const audioRef = useRef(null);
 
+ 
+
   useEffect(() => {
+    
     if (isPlaying) {
       audioRef.current.play();
     } else {
@@ -214,8 +217,8 @@ export default function App() {
 
 
   useEffect(() => {
-
     audioRef.current.src = post && post[currentPage]?.audio_url;
+    
     if (isPlaying) {
       audioRef.current.play();
     }
@@ -224,12 +227,18 @@ export default function App() {
   useEffect(() => {
     audioRef.current.addEventListener('timeupdate', handleTimeUpdate);
     audioRef.current.addEventListener('ended', handleTrackEnded);
-
+    
     // return () => {
-    //   audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
-    //   audioRef.current.removeEventListener('ended', handleTrackEnded);
-    // };
-  }, [currentPage]);
+      //   audioRef.current.removeEventListener('timeupdate', handleTimeUpdate);
+      //   audioRef.current.removeEventListener('ended', handleTrackEnded);
+      // };
+    }, [currentPage]);
+
+    useEffect(() => {
+      if (!isNaN(audioRef.current?.duration)) {
+        setTimeDuration(audioRef.current?.duration);
+      }
+    }, [audioRef.current?.duration]);
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
@@ -271,6 +280,13 @@ export default function App() {
     setCurrentTime(newTime);
     audioRef.current.currentTime = newTime;
   };
+  
+   
+ 
+  // console.log(audioRef.current);/
+  // console.log(timeDuration);
+  // console.log(audioRef.current?.duration);
+  // console.log(audioRef?.current.currentTime);
 
   return <>
 
@@ -287,7 +303,8 @@ export default function App() {
         type="range"
         value={currentTime}
         min={0}
-        max={audioRef.current ? audioRef.current.duration : 0}
+        // max={audioRef.current ? audioRef?.current.duration : 0}
+        max={timeDuration}
         step={1}
         onChange={handleSliderChange}
       />
