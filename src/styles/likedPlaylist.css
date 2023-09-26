@@ -22,7 +22,7 @@
     box-sizing: border-box;
   }
   .loader2::after {
-    content: 'Play list is Empty OR user is not Loggedin';
+    content: 'Playlist is empty...';
     position: absolute;
 
     left: 0;

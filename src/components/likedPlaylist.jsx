@@ -4,6 +4,7 @@ import { Button } from "@mui/material";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router";
 import Playlist from './likedMusicPlay'
+import Alert from '../components/alert';
 
 
 const TryLikedPlayList=()=>{
@@ -19,6 +20,8 @@ const navigate=useNavigate();
     };
 
     const [likedSong,setLikedSong]=useState([]);
+    const [open,setOpen]=useState(false);
+    if(arr3.status=='success'){
     useEffect(() => {
         const fetchData = async () => {
           const response = await fetch(url, { headers });
@@ -26,21 +29,32 @@ const navigate=useNavigate();
             const data = await response.json();
             return data;
           } else {
-            throw new Error(response.statusText);
+            throw new Error(response.status);
           }
         };
         fetchData().then((d) => {
             setLikedSong(d.data.songs);
             
-        });
+        }).catch((err) => {
+          if(err.message==401){
+
+            setOpen(true);
+            setTimeout(()=>{
+              setOpen(false);
+            },3000);
+          }
+         
+        })
       }, []);
+    }
 
     return<>
     <div className="playlist">
     {likedSong.length>0 ? 
     <Playlist songlist={likedSong}/> 
-    : <div className="EmptyErr"> <span className="loader2" style={{fontSize:'4vw'}}>Play list is Empty OR user is not Loggedin</span></div>}
+    : <div className="EmptyErr"> <span className="loader2" style={{fontSize:'4vw'}}>Playlist is empty...</span></div>}
     </div>
+   {open ?  <Alert status={'fail'} text={"Seems like you are not logged in... Login for see liked songs."}/>:null}
     </>
 }
 export default TryLikedPlayList;

@@ -60,7 +60,7 @@ const Login = () => {
         const data = await response.json();
         return data;
       } else {
-        throw new Error("couldn't find the acoount ,Please do signup first.");
+        throw new Error(response.status);
       }
     };
     fetchData().then((d) => {
@@ -75,6 +75,7 @@ const Login = () => {
       setTimeout(()=>{
         setOpen2(false);
       },1000)
+      console.log(err.message,"Status");
     });
   }
   const [open, setOpen] = React.useState(false);

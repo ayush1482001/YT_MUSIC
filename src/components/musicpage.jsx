@@ -114,7 +114,6 @@ export default function App() {
           if (response.ok) {
             return response.json();
           } else {
-            // Request failed, handle the error
             throw new Error('Request failed');
           }
         })
@@ -143,11 +142,11 @@ export default function App() {
   }
 
 
-
+    
   useEffect(() => {
     setLikeStatus(false);
     const arr4 = JSON.parse(localStorage.getItem("loginStatus"));
-    if (arr4) {
+    if (arr4 && arr4.status == 'success') {
 
 
       const jwtToken = arr4.token;;
@@ -183,6 +182,7 @@ export default function App() {
         });
     }
   }, [songData]);
+
   //....................................................................
   const [open, setOpen] = React.useState(false);
   const theme = useTheme();
@@ -210,6 +210,7 @@ export default function App() {
     
     if (isPlaying) {
       audioRef.current.play();
+
     } else {
       audioRef.current.pause();
     }
@@ -257,12 +258,11 @@ export default function App() {
       setsongData(post[currentPage + 1])
       setCurrentpage(currentPage + 1);
       setsongUrl(songData?.audio_url)
-      // setIsPlaying(false);
     }
   };
 
   const handleTimeUpdate = () => {
-    setCurrentTime(audioRef.current.currentTime);
+    setCurrentTime(audioRef.current?.currentTime);
   };
 
   const handleTrackEnded = () => {
@@ -283,10 +283,6 @@ export default function App() {
   
    
  
-  // console.log(audioRef.current);/
-  // console.log(timeDuration);
-  // console.log(audioRef.current?.duration);
-  // console.log(audioRef?.current.currentTime);
 
   return <>
 
