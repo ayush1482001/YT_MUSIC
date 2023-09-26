@@ -61,10 +61,11 @@
   color: white !important;
   width: 100% !important;
 }
-.css-9mgopn-MuiDivider-root {
+.divider hr {
   background-color: grey !important;
   
   width: 80%;
+  height: 2px;
   margin-top: vh;
 }
 

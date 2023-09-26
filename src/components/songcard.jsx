@@ -10,11 +10,11 @@ import { useNavigate } from 'react-router';
 export default function Songcard(prop) {
     const navigate=useNavigate();
     const musiclist=prop.details;
+    console.log("musiclist is",prop.details);
     return (
         <Card className='albumcard' key={prop._id} sx={{ maxWidth: 345 }}
         onClick={()=>{
             const obj=musiclist;
-            // console.log("musiclist is",obj);
             localStorage.setItem("selected",JSON.stringify(obj) );
            navigate('/explore/songplay')
         }}
@@ -28,10 +28,13 @@ export default function Songcard(prop) {
                 />
                 <CardContent>
                     
-                    <h3>{musiclist.title}</h3>
-                    <p>{musiclist.artist.map((e)=>
-                        { e.name +"  "}
-                    )}.</p>
+                    <h5>{musiclist.title}</h5>
+                    <p>{(musiclist.artist).map((e,ind)=>
+                        
+                       <span key={ind}>{ e.name +" "}</span>
+                    
+
+                    )}</p>
                     
 
                 </CardContent>

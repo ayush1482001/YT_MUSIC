@@ -30,6 +30,7 @@ const navigate=useNavigate();
             return data;
           } else {
             throw new Error(response.status);
+            console(response)
           }
         };
         fetchData().then((d) => {
@@ -46,7 +47,15 @@ const navigate=useNavigate();
          
         })
       }, []);
+    }else{
+      useEffect(()=>{
+        setOpen(true);
+        setTimeout(()=>{
+          setOpen(false);
+        },3000);
+      },[])
     }
+    
 
     return<>
     <div className="playlist">
