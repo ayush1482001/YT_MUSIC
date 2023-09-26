@@ -21,7 +21,7 @@ const navigate=useNavigate();
 
     const [likedSong,setLikedSong]=useState([]);
     const [open,setOpen]=useState(false);
-    if(arr3.status=='success'){
+    if(arr3?.status=='success'){
     useEffect(() => {
         const fetchData = async () => {
           const response = await fetch(url, { headers });
