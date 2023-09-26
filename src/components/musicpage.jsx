@@ -291,7 +291,7 @@ export default function App() {
   return <>
 
     {secondaryData ?
-      <Alert sx={{ position: 'fixed', top: 0, left: 0, zIndex: '11111', width: '100%', fontSize: '1.5rem', fontWeight: '700', display: alertSt ? "block" : "none", height: 'max-content' }} icon={<CheckIcon fontSize="inherit" />} severity="success">
+      <Alert sx={{ position: 'fixed', top: 0, left: 0, zIndex: '11111', width: '100%', fontSize: '1.5rem', fontWeight: '700', display: alertSt ? "flex" : "none", height: '8vh' }} icon={<CheckIcon fontSize="inherit" />} severity="success">
         {secondaryData.message}
       </Alert>
       : null}
@@ -303,16 +303,12 @@ export default function App() {
         type="range"
         value={currentTime}
         min={0}
-        // max={audioRef.current ? audioRef?.current.duration : 0}
         max={timeDuration}
         step={1}
         onChange={handleSliderChange}
       />
 
       <div className="controls">
-        {/* =================================================================================================================================================== */}
-
-
         <audio ref={audioRef}></audio>
 
 
