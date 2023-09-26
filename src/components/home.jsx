@@ -15,7 +15,7 @@ import Songcard from './songcard'
 
 
 const Home = (prop) => {
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2);
   const handleChange = (event, value) => {
     setPage(value);
   };
