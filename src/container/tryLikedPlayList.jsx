@@ -229,7 +229,7 @@ export default function TryLiked() {
     return (
         <Box className="homeContainer">
             <CssBaseline />
-            <AppBar position="fixed" open={open} sx={{ background: "black" }}>
+            <AppBar className='appbar' position="fixed" open={open} sx={{ background: "black" }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -274,7 +274,7 @@ export default function TryLiked() {
                     </Box>
                 </Toolbar>
             </AppBar>
-            <Drawer variant="permanent" open={open}>
+            <Drawer className='drawer' variant="permanent" open={open}>
                 <DrawerHeader className='DrawerHead' >
                     <IconButton onClick={handleDrawerClose}>
                         <MenuIcon className='menuIcon' />
@@ -282,7 +282,7 @@ export default function TryLiked() {
                     <Box className="logo"><img src={ytlogo} onClick={()=>{navigate('/')}} alt="logo" /></Box>
                 </DrawerHeader>
 
-                <List sx={{ background: "black", color: "white", height: '100%' }}>
+                <List className='mainList'>
 
                     <ListItem key={'Home'} disablePadding sx={{ display: 'block' }}>
                         <ListItemButton
@@ -401,7 +401,7 @@ export default function TryLiked() {
 
 
             </Drawer>
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" className='db' sx={{ flexGrow: 1, p: 3 }}>
                 <DrawerHeader />
 
                 <Box className='home-container'>

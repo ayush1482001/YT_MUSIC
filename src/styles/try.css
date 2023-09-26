@@ -26,6 +26,7 @@
 }
 .drawer>div {
   border-right:1px solid rgb(44, 43, 43) !important;
+  margin:10px 0 0 0 ;
  
 }
 .appbar>div{
@@ -149,8 +150,10 @@
     url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg");
   padding-left: 20px;
   width: 100% !important;
+  border: 5px solid rgb(0, 0, 0) !important;
   position: relative !important;
 }
+
 
 @media (min-width: 300px) and (max-width: 600px) {
   .appbar>div {
@@ -201,7 +204,7 @@
 
 .Home-sub-container {
   margin-top: 30px;
-  min-height: 80vh;
+  min-height: 83vh;
   display: flex !important;
   justify-content: center !important;
   align-items: center;

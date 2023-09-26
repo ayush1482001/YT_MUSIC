@@ -238,7 +238,7 @@ export default function TryHome() {
     return (
         <Box className="homeContainer">
             <CssBaseline />
-            <AppBar className='appbar' position="fixed" open={open} >
+            <AppBar  className='appbar' position="fixed" open={open} >
                 <Toolbar>
                     <IconButton
                         color="inherit"
