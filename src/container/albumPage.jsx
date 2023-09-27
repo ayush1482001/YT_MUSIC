@@ -385,7 +385,7 @@ function AlbumMusicPage() {
                     </ListItem>
                     <div className="divider"><Divider /></div>
                 </List>
-                <Box sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
+                <Box className="loginSec" sx={{ display: 'flex', justifyContent: 'center', background: 'black' }}>
 
 
                     <LoginButton st={menuSt} />

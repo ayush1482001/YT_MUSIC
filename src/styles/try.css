@@ -1,56 +1,60 @@
 .newPlaylist {
   margin-top: 4vh !important;
   width: 90%;
-
   border-radius: 50px !important;
   padding: 10px 0 !important;
   color: white !important;
   border: none !important;
-
   background-color: rgb(255 255 255 / 10%) !important;
   font-weight: 600 !important;
   font-family: Arial, Helvetica, sans-serif !important;
 }
 
-.DrawerHead {
-  border-bottom: 1px solid rgb(29, 29, 29) !important;
-}
+
 .newPlaylist:hover {
   background-color: rgba(255, 255, 255, 0.168) !important;
 }
 
 .mainList {
-  background: black;
+  background: rgb(0, 0, 0);
   color: white;
   height: 100%;
+   border-right: 1px solid rgb(44, 43, 43) !important;
 }
 .drawer>div {
-  border-right:1px solid rgb(44, 43, 43) !important;
-  margin:10px 0 0 0 ;
- 
+  /* border-right: 1px solid rgb(44, 43, 43) !important; */
+  margin: 0 !important; 
+  background: black!important;
 }
-.appbar>div{
-  box-shadow: -1px -2px 4px rgb(0, 0, 0);
+
+.loginSec{
+  border-right: 1px solid rgb(44, 43, 43) !important;
+
+}
+.mix{padding: 3vh;}
+
+.appbar{
   border-bottom: 1px solid rgb(29, 29, 29) !important;
-  background-color: black!important;
-  
+  background-color: rgb(0, 0, 0)!important;
 }
 .css-1r8v3uq-MuiPaper-root-MuiAppBar-root {
   box-shadow: none !important;
 }
+
 .db {
   padding: 0px !important;
 }
 .mainList li {
-  
   border-radius: 1vw !important;
   padding: 1vh 0 !important;
   font-weight: bold !important;
   font-size: 37px !important;
 }
+.mainList li>div {
+  color: white !important;
+}
 .mainList li:first-child {
   background-color: rgba(255, 255, 255, 0.1) !important;
- 
 }
 .mainList li:hover {
   background-color: rgba(92, 92, 92, 0.641) !important;
@@ -74,7 +78,6 @@
 }
 .divider hr {
   background-color: grey !important;
-
   width: 80%;
   height: 2px;
   margin-top: vh;
@@ -103,54 +106,21 @@
   width: 30vw !important;
 }
 .navigationbar {
-  background-color: rgb(0, 0, 0) !important;
+  background-color: rgb(216, 13, 13) !important;
 }
-/* .container{
-  background-color: rgb(0, 0, 0);
-  min-height: 100vh;
-  min-width: 100vw;
-}
-.aside{
-  background-color: black;
-  min-height: 100vh;
-  width: 13%;
-  margin-top: 80px!important;
-  background-color: rgb(46, 251, 0) !important;
-  box-shadow: 10px 10px 15px red !important;
-}
-.body{
-  background-color: rgb(39, 38, 40);
-  min-height: 100vh;
-  width: 50%;
-  margin-top: 80px!important;
-  background-color: rgb(46, 251, 0) !important;
-  box-shadow: 10px 10px 15px red !important; 
-}
-.sideNav li{
-  border-radius: 1.5vh;
-  height: 7vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  list-style-type:none;
-  display: flex;
- justify-content: center;
- align-items: center;
-}
-.sideNav{
-  padding-bottom: 4vh;
-  border-bottom: 2px solid grey;
-  background-color: green !important;
-} */
+
 .DrawerHead {
-  background-color: black !important;
-  box-shadow: 1px 1px 10px rgb(0, 0, 0) inset !important;
+  height: auto;
+  border: none !important;
+  border-bottom: 1px solid rgb(29, 29, 29) !important;
+  top: -9px!important;
+  background-color: blue;
 }
 .home-container {
   min-height: 100% !important;
   background-image: linear-gradient(rgb(7, 40, 73), black, black, black, black),
     url("https://wallpapertag.com/wallpaper/full/d/8/e/853265-best-white-background-wallpaper-1080x1920-for-iphone-6.jpg");
-  padding-left: 20px;
   width: 100% !important;
-  border: 5px solid rgb(0, 0, 0) !important;
   position: relative !important;
 }
 
@@ -198,6 +168,12 @@
 
 .pagination {
   color: white !important;
+}
+.pagination li div {
+  color: white !important;
+}
+.homeContainer header{
+  background-color: rgb(0, 0, 0)!important;
 }
 
 
