@@ -96,7 +96,7 @@ const Home = (prop) => {
             }
           })
         }
-        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', color: 'green', width:'100vw', margin: '50px 0'  }} count={10} page={page} color={'primary'} onChange={handleChange} /> : null}
+        {data.data && !prop.searchValue ? <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width:'80vw', margin: '50px 0',  }} count={10} page={page} color={'secondary'} onChange={handleChange} /> : null}
       </Grid>
 
 

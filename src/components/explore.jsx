@@ -112,7 +112,7 @@ const Explore = () => {
                 <Songcard details={e} />
               </Grid>
           )}
-          {exploreData.data && <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width: "100%", color: 'white', margin: '50px 0' }} count={10} page={page} color={'primary'} onChange={handleChange} />}
+          {exploreData.data && <Pagination className='pagination' sx={{ display: 'flex', justifyContent: 'center', width: "70vw", color: 'white', margin: '50px 0' }} count={10} page={page} color={'secondary'} onChange={handleChange} />}
         </Grid>
       </div>
     </div>
