@@ -330,7 +330,7 @@ export default function App() {
         <ThumbDownOffAltIcon onClick={handleDislike} color={dislike ? "primary" : "ksm"} className="dislike" sx={{ height: '50%', width: "20%" }}></ThumbDownOffAltIcon>
       </div>
     </div >
-    <Grid container spacing={2} className='albumpage'>
+    <Grid container spacing={2} sx={{ background: 'black'}} className='albumpage'>
 
       <Grid className='imagebox' item md={7} sm={7} sx={{ background: 'black', height: '80vh' }} xs={12}>
         <img src={songData?.thumbnail} />

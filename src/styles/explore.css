@@ -1,9 +1,9 @@
 .subnavigation{
-    margin-bottom: 10vh;
+    margin-bottom: 8vh;
     background-color: yellow transparent!important;
 }
 .explore_category{
-    margin-top: 5vh!important;
+    margin-top: 4vh!important;
     /* background-color: rgba(255, 255, 2, 0.305); */
     display: flex ;
     justify-content: center;
@@ -40,3 +40,11 @@
   .explore_category>button:hover{
     background-color: rgba(255, 255, 255, 0.36) !important;
     }
+@media (max-width:894px){
+    .subnavigation{
+        margin-bottom: 3vh;
+    }
+    .explore_category{
+        margin-top: 2vh!important;
+    }
+}

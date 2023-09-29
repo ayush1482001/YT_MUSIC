@@ -6,10 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: green;
 }
 
 .singleplay .img1 {
-  height: 80%;
+  height: 100%;
   position: relative;
 }
 .controls{
@@ -90,5 +91,8 @@ transition: ease-in-out;
   }
   .likes2{
     width:25% !important
+  }
+  .singleplay{
+    height: 80vh !important;
   }
 }

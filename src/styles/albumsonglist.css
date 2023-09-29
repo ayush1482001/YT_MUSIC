@@ -32,14 +32,11 @@
     .playbutton{
     background-color: white !important;
     color: black!important;
-    font-size: 0.8vw !important;
     border-radius: 600px!important;
     border: none !important;
     }
     .addbutton{
-    /* background-color: black !important; */
     color: white!important;
-    font-size: 0.8vw !important;
     border-radius: 60px!important;
     }
     
@@ -52,11 +49,9 @@
         width: 80%;
     }
     .albumsonglist li{
-        /* list-style-type: none; */
         cursor: pointer !important;
         font-size: 125%;
         padding: 2vh 1vw;
-        /* background-color: yellow !important; */
         position: relative;
     }
     .playsm2{
@@ -74,10 +69,23 @@
         .playsm2{
             display: inline-block;
         }
-   
     }
     .albumsonglist hr{
         border: 1px solid rgba(255, 255, 255, 0.142) !important;
          width: 98%;
         margin-left: 10px !important; 
+    }
+    @media(max-width:450px){
+        .albumsonglist li{
+            font-size: 90%;
+        }
+        .albumsonglist hr{
+            margin-left: 0px !important; 
+        }
+        .detailbox h1{
+        font-size: 140%!important;
+    }
+    .detailbox span{
+            font-size: 70%!important;
+        }
     }

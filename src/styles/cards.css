@@ -3,19 +3,19 @@
     height: 320px;
     color: white!important;
     background-color: black!important;
+    box-shadow: 2px -1px 8px  rgb(51, 50, 50)!important;
 }
 .albumcard:hover{
    
     scale:1.05;
     transition: ease-in-out;
     transition-duration: 0.3s;
-    /* transition-delay: .1s; */
     .playsm{
         display: inline-block!important;
     }
 }
 .albumcard .imgposter{
-    height: 200px!important;
+    /* height: 30%!important; */
     border-radius: 5px;
     
 }
@@ -32,15 +32,30 @@
     display: none !important;
 }
 
-.albumcard p{
+/* .albumcard p{
     margin: 5px 0;
     color: grey;
     font-weight: 600;
     font-family: sans-serif;
     font-size: 16px;
-    /* background-color: yellow !important; */
     height: 37px;
     text-overflow: ellipsis!important;
     overflow-y: hidden!important;
-    /* white-space: nowrap; */
-}
+} */
+
+/* .albumcard h6{
+    margin: 0 !important;;
+    padding: 0!important;
+} */
+/*@media (max-width: 767px) {
+ 
+    .albumcard{
+        width: 100px !important;
+        height: 200px!important;
+        border: 2px solid red;
+    }
+    .playsm{
+        width: 100px!important;
+        height: 100px!  important;
+    }
+} */

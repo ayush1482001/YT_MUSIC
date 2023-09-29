@@ -66,7 +66,7 @@ const Explore = () => {
     <div className="explore">
       <div className="subnavigation" >
         <Grid container spacing={2} >
-          <Grid item className='explore_category' xs={12} sm={12} md={6} >
+          <Grid item className='explore_category' spacing={2} xs={12} sm={12} md={6} >
             <Button variant="contained" sx={{color:catVal=="newrelease" ? "red" : null,borderBottom: catVal=="newrelease" ? "3px solid red":null}} onClick={handleNewRelease} startIcon={<NewReleasesIcon />} >New releases</Button>
           </Grid>
           {/* <Grid item className='explore_category' xs={12} sm={12} md={4}>

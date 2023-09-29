@@ -398,9 +398,9 @@ export default function TryLib() {
                 <DrawerHeader />
 
                 <Box className='home-container'>
-                    <Button variant="outlined" color='primary' className="backBtn2" onClick={() => navigate(-1)}  >Back</Button>
+                    {/* <Button variant="outlined" color='primary' sx={{display:{md:'none'}}} className="backBtn2" onClick={() => navigate(-1)}  >Back</Button> */}
                     <Musicpage />
-                    {/* <h1>working</h1> */}
+                    
 
                 </Box>
             </Box>

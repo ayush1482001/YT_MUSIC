@@ -2,10 +2,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: rgb(13, 241, 59) !important; */
     }
     .detailbox{
     overflow-x: hidden;
     flex-wrap: wrap;align-items: start;
+    background-color: transparent !important;
       }
     .detailbox h2{
         padding: 4vh 0 3vh 1vw;
@@ -142,6 +144,30 @@
   width:100% !important;
   height: 2px!important; 
 }
-
+@media (max-width:500px){
+  .imagebox{
+    height: max-content!important;
+    }
+    .detailbox h2{
+    bottom:70px!important;
+    position: sticky !important;
+    padding: 20px 25px!important;
+    left: -20px;
+    top: -20px;
+    }
+   .albumpage{
+    margin: 0!important;
+   }
+   .detailbox{
+    padding: 0!important;
+   }
+   .detailbox ol{
+    padding-left: 0!important;
+    font-size: 13px !important;
+   }
+   .playsm3{
+  margin-left: 1vw !important; 
+  }
+}
 
     
