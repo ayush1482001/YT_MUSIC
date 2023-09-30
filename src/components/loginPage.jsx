@@ -18,6 +18,7 @@ import Alert from './alert'
 
 const Login = () => {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
+  const[formErr,setFormErr]=useState({mailErr:"",passErr:"",alertErr:""});
   const [response, setResponse] = useState(null);
   const navigate = useNavigate();
   const url = 'https://academics.newtonschool.co/api/v1/user/login';
@@ -48,6 +49,11 @@ const Login = () => {
 
   }
   const handlePassword = (e) => {
+    if (e.target.value.length<6 && e.target.value.length>0){
+      setFormErr({...formErr,passErr:"Password should be of atleast 6 words"})
+    }else{
+      setFormErr({...formErr,passErr:""})
+    }
     setLoginDetails({ ...loginDetails, password: e.target.value });
 
   }
@@ -61,6 +67,7 @@ const Login = () => {
         return data;
       } else {
         throw new Error(response.status);
+        console.log(response);
       }
     };
     fetchData().then((d) => {
@@ -71,12 +78,15 @@ const Login = () => {
       },1000)
       localStorage.setItem("loginStatus", JSON.stringify(d));
     }).catch((err) => {
+      if(err.message==401){
+        setFormErr({...formErr, alertErr:"Your email or password is incorrect"})
+      }
       setOpen2(true);
       setTimeout(()=>{
         setOpen2(false);
       },1000)
-      console.log(err.message,"Status");
     });
+   
   }
   const [open, setOpen] = React.useState(false);
   const [open2, setOpen2] = React.useState(false);
@@ -99,24 +109,26 @@ const Login = () => {
       <div className="shape"></div>
       <div className="shape"></div>
     </div>
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
       <h3>Login Here</h3>
 
       <label htmlFor="username">Email <span className="req">*</span></label>
       <input type="email" placeholder="Email" id="username"
-        onChange={handleEmail} />
+        onChange={handleEmail} required/>
+        {<span style={{color:'red'}}>{formErr.mailErr}</span>}
 
       <label htmlFor="password">Password <span className="req">*</span></label>
       <input onChange={handlePassword} type="password" placeholder="Password" id="password" required />
+      {<span style={{color:'red'}}>{formErr.passErr}</span>}
 
-      <button type="submit" onClick={handleSubmit}>Log In</button>
+      <button type="submit" >Log In</button>
       <div className="social">
         <span>dont't have account ?</span>
         <div className="fb" onClick={() => { navigate('/signup') }}>Sign up</div>
       </div>
     </form>
     {open ? <Alert  text={"succesfully logged in ..."}  /> : null}
-    {open2 ? <Alert status={"fail"} text={"Don't have account plese signup first..."}  /> : null}
+    {open2 ? <Alert status={"fail"} text={formErr.alertErr}  /> : null}
 
   </>
 }

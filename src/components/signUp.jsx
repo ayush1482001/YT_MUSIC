@@ -28,6 +28,7 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
 
 const SignUp = () => {
     const [signupDetails,setsignupDetails]=useState({name:"",email:"",password:"", appType:"music"});
+    const[formErr,setFormErr]=useState({usernameErr:"",passErr:"",alertErr:""});
     const[res,setRes]=useState();
 
 
@@ -47,16 +48,31 @@ const SignUp = () => {
   }
   const handlePassword=(e)=>{
     setsignupDetails({...signupDetails,password:e.target.value});
+    if(e.target.value.length<6 && e.target.value.length>0){
+      setFormErr({...formErr,passErr:"Password must be at least 6 characters"})
+    }else{
+      setFormErr({...formErr,passErr:""})
+    }
   
   }
   const handleUsername=(e)=>{
+    const temp=e.target.value;
+    function isUsernameValid(a) {
+      var pattern = /^[a-zA-Z0-9_]+$/; 
+      return pattern.test(a);
+    };
+    
+    if(!isUsernameValid(temp)&& temp.length >0){
+      setFormErr({...formErr,usernameErr:"username should't contain symbol"})
+    }else{
+      setFormErr({...formErr,usernameErr:""})
+    }
+
     setsignupDetails({...signupDetails,name:e.target.value});
   
   }
   const handleSubmit=(e)=>{
-    console.log(signupDetails);
     e.preventDefault();
-    
     fetch('https://academics.newtonschool.co/api/v1/user/signup', {
       method: 'POST',
       headers: {
@@ -69,14 +85,15 @@ const SignUp = () => {
   })
   .then(response => {
       if (response.ok) {
-          // Registration was successful
           return response.json();
       } else {
-      
+       console.log(response)
           if(response.status==403){
-            throw new Error("Registration failed! User is already registered");
+            throw new Error("Registration failed! User has already registered");
+          }else if(response.status==400){
+            throw new Error("Registration failed! Enter valid email address and password");
           }else{
-            throw new Error("Registration failed");
+            throw new Error("Registration failed! Error...");
           }
       }
   })
@@ -95,6 +112,7 @@ const SignUp = () => {
       setTimeout(()=>{
         setOpen2(false)
       },2000)
+      setFormErr({...formErr,alertErr:error.message});
   });
   
   }
@@ -118,26 +136,27 @@ Home
         <div className="shape"></div>
         <div className="shape"></div>
     </div>
-    <form className="form">
+    <form className="form" onSubmit={handleSubmit}>
         <h3>Signup Here</h3>
 
         <label htmlFor="username">Username <span className="req">*</span></label>
-        <input type="text" placeholder="jhon pele" onChange={handleUsername} id="username"required/>
+        <input type="text" placeholder="Shubham shukla" onChange={handleUsername} id="username"required/>
+        {<span style={{color:'red'}}>{formErr.usernameErr}</span>}
 
         <label htmlFor="email">Email <span className="req">*</span></label>
         <input type="email" placeholder="jhony@123.com " onChange={handleEmail} id="email" required/>
 
         <label htmlFor="password">Password <span className="req">*</span></label>
         <input type="password" placeholder="Password" onChange={handlePassword} id="password"required/>
+        {<span style={{color:'red'}}>{formErr.passErr}</span>}
 
-        <button type="submit" onClick={handleSubmit}>Sign up</button>
+        <button type="submit"  disabled={formErr.passErr.length>0 || formErr.usernameErr.length>0 ? "disabled" : false} >Sign up</button>
         <div className="social">
         <span>already have an account ?</span>
           <div className="fb"onClick={()=>{navigate('/login')}}>Login</div>
         </div>
     </form>
 
-    {/* ================================================= */}
     <div>
      
       <BootstrapDialog
@@ -172,7 +191,7 @@ Home
       </BootstrapDialog>
     </div>
 
-{open2 ?     <Alert status={"fail"} text={"Wrong input...  please fill all the fields carefully..."}/>:null}
+{open2 ?     <Alert status={"fail"} text={`${formErr.alertErr}`}/>:null}
 
   </>
 }

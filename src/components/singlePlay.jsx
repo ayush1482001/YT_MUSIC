@@ -166,7 +166,7 @@ const Singleplay = () => {
     <div className="singleplay">
 
 
-      <img className="img1" src={songchoosen.thumbnail} alt="img1" />
+      <img className="img1" src={songchoosen.thumbnail} alt="img1"  />
 
 
     </div>
