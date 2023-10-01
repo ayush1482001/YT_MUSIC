@@ -28,10 +28,12 @@ function App() {
  
  
 
-  const likedSongArray=[];
   const libraryAlbum=[];
-  localStorage.setItem("likedSongArrayUp",JSON.stringify (likedSongArray));
-  localStorage.setItem("libraryAlbum", JSON.stringify (libraryAlbum));
+  if(JSON.parse(localStorage.getItem("libraryAlbum"))){
+    
+  }else{
+    localStorage.setItem("libraryAlbum", JSON.stringify (libraryAlbum));
+  }
 
   const router = createBrowserRouter([
     {

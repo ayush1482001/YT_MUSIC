@@ -55,7 +55,7 @@ const MusicList=()=>{
   const handleSaveLibrary=()=>{
     const obj=musiclist;
     const arr=JSON.parse(localStorage.getItem("libraryAlbum"));
-    const ans= arr.filter((e)=>{
+    const ans= arr?.filter((e)=>{
       return e._id==obj._id;
       })
     if (!ans.length==0){
